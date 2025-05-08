@@ -1,0 +1,14 @@
+import React, { useState } from 'react';
+
+function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  return (
+    <div>
+      {isLoggedIn ? <p>Welcome, User!</p> : <p>Please log in.</p>}
+      <button onClick={() => setIsLoggedIn(!isLoggedIn)}>
+        {isLoggedIn ? 'Log out' : 'Log in'}
+      </button>
+    </div>
+  );
+}
