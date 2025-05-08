@@ -46,6 +46,8 @@ function Timer() {
 export default Timer;
 
 
+----------------------------------------------------------------------------
+
 import React, { useState, useEffect } from 'react';
 
 const Timer = () => {
