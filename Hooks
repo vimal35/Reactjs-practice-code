@@ -44,3 +44,31 @@ function Timer() {
 }
 
 export default Timer;
+
+
+import React, { useState, useEffect } from 'react';
+
+const Timer = () => {
+  // Declare a state variable called 'seconds' and set its initial value to 0
+  const [seconds, setSeconds] = useState(0);
+
+  useEffect(() => {
+    // Set up an interval to increment the seconds every 1 second
+    const interval = setInterval(() => {
+      setSeconds(prevSeconds => prevSeconds + 1);
+    }, 1000);
+
+    // Cleanup function to clear the interval when the component unmounts
+    return () => clearInterval(interval);
+  }, []); // Empty dependency array ensures this runs only once (on mount)
+
+  return (
+    <div style={{ textAlign: 'center', marginTop: '50px' }}>
+      <h1>React Timer</h1>
+      <h2>{seconds} second(s)</h2>
+    </div>
+  );
+};
+
+export default Timer;
+
